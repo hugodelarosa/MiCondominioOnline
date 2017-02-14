@@ -9,6 +9,7 @@ Using the “JUST & SIGN” trademark nowadays the company its involved in proje
 
 In the same approach, now the company is building a new solution for offering condos an integral grasp for the problems they face.
 Through the time SGC has acquired experience about the problems that a condominium administration faces during the daily operation, contributing with decisions and statements that have been valued positively.
+
 Due to a research done by the company about the different administration services, alongside with the investigation, testing and evaluation of web platforms in the market, SGC has determined to launch Condominio.Plus trademark together with the development of a system that help the operations.
 
 
