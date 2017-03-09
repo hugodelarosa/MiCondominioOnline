@@ -15,6 +15,8 @@ class CreateTypeOfMembershipTable extends Migration
     {
         Schema::create('type_of_memberships', function(Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('unlocked_feature_id');
+            $table->foreign('unlocked_feature_id')->references('id')->on('unlocked_features');
             $table->text('name');
             $table->float('cost');
             $table->timestamps();
