@@ -13,13 +13,12 @@ class CreateTypeOfMembershipTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_of_membership', function(Blueprint $table) {
-            $table->bigInteger('Id');
-            $table->text('Name');
-            $table->float('Cost');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
-            $table->dateTime('deleted_at');
+        Schema::create('type_of_memberships', function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->text('name');
+            $table->float('cost');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateTypeOfMembershipTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_membership');
+        Schema::dropIfExists('type_of_memberships');
     }
 }

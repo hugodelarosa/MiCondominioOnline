@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCondosTable extends Migration
+class CreateVisitorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateCondosTable extends Migration
      */
     public function up()
     {
-        Schema::create('condos', function(Blueprint $table) {
+        Schema::create('visitors', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->text('direction');
+            $table->date('date_arrival');
+            $table->boolean('vehicle');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +30,6 @@ class CreateCondosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condos');
+        Schema::dropIfExists('visitors');
     }
 }

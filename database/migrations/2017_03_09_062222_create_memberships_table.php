@@ -13,13 +13,12 @@ class CreateMembershipTable extends Migration
      */
     public function up()
     {
-        Schema::create('membership', function(Blueprint $table) {
-            $table->bigInteger('Id');
-            $table->dateTime('Start Date');
-            $table->dateTime('End Date');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
-            $table->dateTime('deleted_at');
+        Schema::create('memberships', function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateMembershipTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('membership');
+        Schema::dropIfExists('memberships');
     }
 }

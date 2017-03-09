@@ -13,14 +13,13 @@ class CreateTransactionTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaction', function(Blueprint $table) {
-            $table->bigInteger('Id');
-            $table->text('Observations');
-            $table->float('Ammount');
-            $table->boolean('Verified');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at');
-            $table->dateTime('deleted_at');
+        Schema::create('transactions', function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->text('observations');
+            $table->float('ammount');
+            $table->boolean('verified');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -31,6 +30,6 @@ class CreateTransactionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaction');
+        Schema::dropIfExists('transactions');
     }
 }

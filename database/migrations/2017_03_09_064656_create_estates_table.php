@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCondosTable extends Migration
+class CreateEstateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateCondosTable extends Migration
      */
     public function up()
     {
-        Schema::create('condos', function(Blueprint $table) {
+        Schema::create('estates', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('name');
-            $table->text('direction');
+            $table->text('number');
+            $table->boolean('rented');
+            $table->integer('number_of_parking_lots');
+            $table->text('notes');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +31,6 @@ class CreateCondosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condos');
+        Schema::dropIfExists('estates');
     }
 }
