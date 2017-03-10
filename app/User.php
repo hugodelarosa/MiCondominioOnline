@@ -40,4 +40,9 @@ class User extends Model
     {
         return $this->hasMany('App\Asset');
     }
+
+    public function announcements()
+    {
+        return $this->hasMany('App\Announcement');
+    }
 }
