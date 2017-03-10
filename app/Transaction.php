@@ -10,4 +10,9 @@ class Transaction extends Model
     {
         return $this->hasOne('App\TypeOfTransaction');
     }
+
+    public function receipt()
+    {
+        return $this->hasOne('App\Receipt');
+    }
 }
