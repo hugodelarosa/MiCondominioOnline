@@ -14,7 +14,7 @@ class CreateCondosTable extends Migration
     public function up()
     {
         Schema::create('condos', function(Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
+            $table->bigIncrements('id')->default();
             $table->text('name');
             $table->text('direction');
             $table->timestamps();

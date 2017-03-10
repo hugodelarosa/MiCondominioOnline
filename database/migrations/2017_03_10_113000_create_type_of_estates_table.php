@@ -14,7 +14,7 @@ class CreateTypeOfEstatesTable extends Migration
     public function up()
     {
         Schema::create('type_of_estates', function(Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
+            $table->bigIncrements('id')->default();
             $table->text('name');
             $table->text('description');
             $table->timestamps();

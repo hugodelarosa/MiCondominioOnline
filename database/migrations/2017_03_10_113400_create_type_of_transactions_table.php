@@ -14,7 +14,7 @@ class CreateTypeOfTransactionsTable extends Migration
     public function up()
     {
         Schema::create('type_of_transactions', function(Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
+            $table->bigIncrements('id')->default();
             $table->text('name');
             $table->boolean('income/outcome');
             $table->timestamps();
