@@ -10,4 +10,9 @@ class Condo extends Model
     {
         return $this->belongsToMany('App\Estate');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

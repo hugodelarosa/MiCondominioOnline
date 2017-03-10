@@ -16,8 +16,13 @@ class User extends Model
         return $this->hasOne('App\Role');
     }
 
-    public function condos()
+    public function estates()
     {
         return $this->belongsToMany('App\Estate');
+    }
+
+    public function condos()
+    {
+        return $this->belongsToMany('App\Condo');
     }
 }
