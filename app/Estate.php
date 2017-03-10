@@ -10,4 +10,9 @@ class Estate extends Model
     {
         return $this->belongsTo('App\TypeOfEstate');
     }
+
+    public function condos()
+    {
+        return $this->belongsToMany('App\Condo');
+    }
 }
