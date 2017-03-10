@@ -8,7 +8,7 @@ class User extends Model
 {
     public function membership()
     {
-        return $this->hasMany('App\Membership');
+        return $this->belongsTo('App\Membership');
     }
 
     public function role()
