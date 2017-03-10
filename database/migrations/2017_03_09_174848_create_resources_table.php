@@ -16,9 +16,17 @@ class CreateResourcesTable extends Migration
         Schema::create('resources', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('type_of_resource_id');
-            $table->foreign('type_of_resource_id')->references('id')->on('type_of_resources');
+            $table->foreign('type_of_resource_id')
+            ->references('id')
+            ->on('type_of_resources')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->integer('capacity');
             $table->float('fee');
         });

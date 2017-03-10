@@ -15,9 +15,17 @@ class CreateCondoUser extends Migration
     {
         Schema::create('condo_user', function (Blueprint $table) {
             $table->unsignedBigInteger('condo_id');
-            $table->foreign('condo_id')->references('id')->on('condos');
+            $table->foreign('condo_id')
+            ->references('id')
+            ->on('condos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

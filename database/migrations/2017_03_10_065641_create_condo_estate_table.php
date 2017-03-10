@@ -15,9 +15,17 @@ class CreateCondoEstate extends Migration
     {
         Schema::create('condo_estate', function(Blueprint $table) {
             $table->unsignedBigInteger('condo_id');
-            $table->foreign('condo_id')->references('id')->on('condos');
+            $table->foreign('condo_id')
+            ->references('id')
+            ->on('condos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('estate_id');
-            $table->foreign('estate_id')->references('id')->on('estates');
+            $table->foreign('estate_id')
+            ->references('id')
+            ->on('estates')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

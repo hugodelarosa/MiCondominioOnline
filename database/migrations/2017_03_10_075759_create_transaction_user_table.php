@@ -15,9 +15,17 @@ class CreateTransactionUser extends Migration
     {
         Schema::create('transaction_user', function (Blueprint $table) {
             $table->unsignedBigInteger('transaction_id');
-            $table->foreign('transaction_id')->references('id')->on('transactions');
+            $table->foreign('transaction_id')
+            ->references('id')
+            ->on('transactions')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
