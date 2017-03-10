@@ -28,9 +28,9 @@ class CreateUsersTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->text('name');
-            $table->text('last_name');
+            $table->text('lastname');
             $table->text('email');
-            $table->string('telephone');
+            $table->string('phone');
             $table->text('password');
             $table->rememberToken();
             $table->timestamps();
