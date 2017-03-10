@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMembershipTable extends Migration
+class CreateTypeOfMembershipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateMembershipTable extends Migration
      */
     public function up()
     {
-        Schema::create('memberships', function(Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_membership_id');
-            $table->foreign('type_of_membership_id')
+        Schema::create('type_of_memberships', function(Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->unsignedBigInteger('unlocked_feature_id');
+            $table->foreign('unlocked_feature_id')
             ->references('id')
-            ->on('type_of_memberships')
+            ->on('unlocked_features')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->text('name');
+            $table->float('cost');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -35,6 +35,6 @@ class CreateMembershipTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memberships');
+        Schema::dropIfExists('type_of_memberships');
     }
 }

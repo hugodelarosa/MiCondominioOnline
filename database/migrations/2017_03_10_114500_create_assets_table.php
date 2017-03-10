@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransactionUser extends Migration
+class CreateAssetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateTransactionUser extends Migration
      */
     public function up()
     {
-        Schema::create('transaction_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('transaction_id');
-            $table->foreign('transaction_id')
-            ->references('id')
-            ->on('transactions')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+        Schema::create('assets', function (Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->text('name');
+            $table->text('description');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -36,6 +35,6 @@ class CreateTransactionUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaction_user');
+        Schema::dropIfExists('assets');
     }
 }

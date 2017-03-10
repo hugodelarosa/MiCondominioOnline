@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoleTable extends Migration
+class CreateTypeOfResourcesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateRoleTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('permission_id');
-            $table->foreign('permission_id')
-            ->references('id')
-            ->on('permissions')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+        Schema::create('type_of_resources', function (Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
             $table->text('name');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -34,6 +29,6 @@ class CreateRoleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('type_of_resource');
     }
 }

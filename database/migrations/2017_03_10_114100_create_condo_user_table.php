@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateResourcesTable extends Migration
+class CreateCondoUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateResourcesTable extends Migration
      */
     public function up()
     {
-        Schema::create('resources', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_resource_id');
-            $table->foreign('type_of_resource_id')
+        Schema::create('condo_user', function (Blueprint $table) {
+            $table->unsignedBigInteger('condo_id');
+            $table->foreign('condo_id')
             ->references('id')
-            ->on('type_of_resources')
+            ->on('condos')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
@@ -27,8 +26,6 @@ class CreateResourcesTable extends Migration
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->integer('capacity');
-            $table->float('fee');
         });
     }
 
@@ -39,6 +36,6 @@ class CreateResourcesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resources');
+        Schema::dropIfExists('condo_user');
     }
 }

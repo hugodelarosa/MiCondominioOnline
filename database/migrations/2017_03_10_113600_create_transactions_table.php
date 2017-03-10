@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransactionTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateTransactionTable extends Migration
     public function up()
     {
         Schema::create('transactions', function(Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->default(0);
             $table->unsignedBigInteger('type_of_transaction_id');
             $table->foreign('type_of_transaction_id')
             ->references('id')

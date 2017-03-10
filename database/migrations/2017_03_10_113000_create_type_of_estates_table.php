@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReceiptsTable extends Migration
+class CreateTypeOfEstatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateReceiptsTable extends Migration
      */
     public function up()
     {
-        Schema::create('receipts', function(Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->date('date');
-            $table->text('name_of_img');
-            $table->text('type_of_img');
+        Schema::create('type_of_estates', function(Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->text('name');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreateReceiptsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receipts');
+        Schema::dropIfExists('type_of_states');
     }
 }

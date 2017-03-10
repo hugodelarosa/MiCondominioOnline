@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeOfTransactionsTable extends Migration
+class CreatePermissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTypeOfTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_of_transactions', function(Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('permissions', function(Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
             $table->text('name');
-            $table->boolean('income/outcome');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +28,6 @@ class CreateTypeOfTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_transactions');
+        Schema::dropIfExists('permissions');
     }
 }

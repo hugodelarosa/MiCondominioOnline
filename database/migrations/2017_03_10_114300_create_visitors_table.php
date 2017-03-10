@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstateUser extends Migration
+class CreateVisitorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateEstateUser extends Migration
      */
     public function up()
     {
-        Schema::create('estate_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('estate_id');
-            $table->foreign('estate_id')
+        Schema::create('visitors', function(Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->unsignedBigInteger('type_of_visitor_id');
+            $table->foreign('type_of_visitor_id')
             ->references('id')
-            ->on('estates')
+            ->on('type_of_visitors')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
@@ -26,6 +27,11 @@ class CreateEstateUser extends Migration
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->text('name');
+            $table->date('date_arrival');
+            $table->boolean('vehicle');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -36,6 +42,6 @@ class CreateEstateUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estate_user');
+        Schema::dropIfExists('visitors');
     }
 }

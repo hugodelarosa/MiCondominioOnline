@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstateTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateEstateTable extends Migration
      */
     public function up()
     {
-        Schema::create('estates', function(Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_estate_id');
-            $table->foreign('type_of_estate_id')
+        Schema::create('roles', function (Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->unsignedBigInteger('permission_id');
+            $table->foreign('permission_id')
             ->references('id')
-            ->on('type_of_estates')
+            ->on('permissions')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->text('number');
-            $table->boolean('rented');
-            $table->integer('number_of_parking_lots');
-            $table->text('notes');
+            $table->text('name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -37,6 +34,6 @@ class CreateEstateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estates');
+        Schema::dropIfExists('roles');
     }
 }

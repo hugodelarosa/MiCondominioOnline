@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCondoUser extends Migration
+class CreateAnnouncementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateCondoUser extends Migration
      */
     public function up()
     {
-        Schema::create('condo_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('condo_id');
-            $table->foreign('condo_id')
-            ->references('id')
-            ->on('condos')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+        Schema::create('announcements', function (Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            $table->text('title');
+            $table->text('url_of_content');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -36,6 +35,6 @@ class CreateCondoUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condo_user');
+        Schema::dropIfExists('announcements');
     }
 }

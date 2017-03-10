@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVisitorsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,26 @@ class CreateVisitorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('visitors', function(Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_visitor_id');
-            $table->foreign('type_of_visitor_id')
+        Schema::create('users', function (Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->unsignedBigInteger('membership_id');
+            $table->foreign('membership_id')
             ->references('id')
-            ->on('type_of_visitors')
+            ->on('memberships')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')
             ->references('id')
-            ->on('users')
+            ->on('roles')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->text('name');
-            $table->date('date_arrival');
-            $table->boolean('vehicle');
+            $table->text('lastname');
+            $table->text('email');
+            $table->string('phone');
+            $table->text('password');
+            $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -42,6 +45,6 @@ class CreateVisitorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visitors');
+        Schema::dropIfExists('users');
     }
 }

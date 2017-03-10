@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeOfStateTable extends Migration
+class CreateCondosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTypeOfStateTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_of_states', function(Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('condos', function(Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
             $table->text('name');
-            $table->text('description');
+            $table->text('direction');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +29,6 @@ class CreateTypeOfStateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_states');
+        Schema::dropIfExists('condos');
     }
 }

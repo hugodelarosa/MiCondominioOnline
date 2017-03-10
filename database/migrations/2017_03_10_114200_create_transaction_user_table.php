@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCondoEstate extends Migration
+class CreateTransactionUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateCondoEstate extends Migration
      */
     public function up()
     {
-        Schema::create('condo_estate', function(Blueprint $table) {
-            $table->unsignedBigInteger('condo_id');
-            $table->foreign('condo_id')
+        Schema::create('transaction_user', function (Blueprint $table) {
+            $table->unsignedBigInteger('transaction_id');
+            $table->foreign('transaction_id')
             ->references('id')
-            ->on('condos')
+            ->on('transactions')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->unsignedBigInteger('estate_id');
-            $table->foreign('estate_id')
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
             ->references('id')
-            ->on('estates')
+            ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });
@@ -36,6 +36,6 @@ class CreateCondoEstate extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condo_estate');
+        Schema::dropIfExists('transaction_user');
     }
 }

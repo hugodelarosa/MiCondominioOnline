@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnnouncementsTable extends Migration
+class CreateResourcesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,22 @@ class CreateAnnouncementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('announcements', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('resources', function (Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->unsignedBigInteger('type_of_resource_id');
+            $table->foreign('type_of_resource_id')
+            ->references('id')
+            ->on('type_of_resources')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->text('title');
-            $table->text('url_of_content');
-            $table->timestamps();
-            $table->softDeletes();
+            $table->integer('capacity');
+            $table->float('fee');
         });
     }
 
@@ -35,6 +39,6 @@ class CreateAnnouncementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('announcements');
+        Schema::dropIfExists('resources');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePermissionsTable extends Migration
+class CreateReceiptsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('permissions', function(Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('name');
+        Schema::create('receipts', function(Blueprint $table) {
+            $table->bigIncrements('id')->default(0);
+            $table->date('date');
+            $table->text('name_of_img');
+            $table->text('type_of_img');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +30,6 @@ class CreatePermissionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('receipts');
     }
 }
