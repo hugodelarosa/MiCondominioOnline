@@ -10,4 +10,9 @@ class Role extends Model
     {
         return $this->hasOne('App\Permission');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
