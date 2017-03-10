@@ -10,4 +10,9 @@ class Visitor extends Model
     {
         return $this->hasOne('App\TypeOfVisitor');
     }
+
+    public function users()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

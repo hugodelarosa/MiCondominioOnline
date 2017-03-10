@@ -30,4 +30,9 @@ class User extends Model
     {
         return $this->belongsToMany('App\Transaction');
     }
+
+    public function visitor()
+    {
+        return $this->hasMany('App\Visitor');
+    }
 }
