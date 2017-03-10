@@ -35,4 +35,9 @@ class User extends Model
     {
         return $this->hasMany('App\Visitor');
     }
+
+    public function assets()
+    {
+        return $this->hasMany('App\Asset');
+    }
 }
