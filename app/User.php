@@ -50,4 +50,6 @@ class User extends Model
     {
         return $this->hasMany('App\Resource');
     }
+
+    protected $fillable = ['name', 'lastname', 'email', 'phone', 'password'];
 }
