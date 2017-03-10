@@ -14,7 +14,7 @@ class CreateMembershipsTable extends Migration
     public function up()
     {
         Schema::create('memberships', function(Blueprint $table) {
-            $table->bigIncrements('id')->default();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('type_of_membership_id');
             $table->foreign('type_of_membership_id')
             ->references('id')

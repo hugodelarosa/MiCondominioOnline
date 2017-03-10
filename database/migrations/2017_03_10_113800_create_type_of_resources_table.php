@@ -14,7 +14,7 @@ class CreateTypeOfResourcesTable extends Migration
     public function up()
     {
         Schema::create('type_of_resources', function (Blueprint $table) {
-            $table->bigIncrements('id')->default();
+            $table->bigIncrements('id');
             $table->text('name');
             $table->text('description');
             $table->timestamps();

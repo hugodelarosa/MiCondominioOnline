@@ -14,7 +14,7 @@ class CreateEstatesTable extends Migration
     public function up()
     {
         Schema::create('estates', function(Blueprint $table) {
-            $table->bigIncrements('id')->default();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('type_of_estate_id');
             $table->foreign('type_of_estate_id')
             ->references('id')

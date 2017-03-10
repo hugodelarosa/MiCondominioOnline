@@ -14,7 +14,7 @@ class CreateUnlockedFeaturesTable extends Migration
     public function up()
     {
         Schema::create('unlocked_features', function(Blueprint $table) {
-            $table->bigIncrements('id')->default();
+            $table->bigIncrements('id');
             $table->text('name');
             $table->timestamps();
             $table->softDeletes();
