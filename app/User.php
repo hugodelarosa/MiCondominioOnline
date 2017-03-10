@@ -25,4 +25,9 @@ class User extends Model
     {
         return $this->belongsToMany('App\Condo');
     }
+
+    public function transactions()
+    {
+        return $this->belongsToMany('App\Transaction');
+    }
 }

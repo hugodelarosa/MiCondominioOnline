@@ -15,4 +15,9 @@ class Transaction extends Model
     {
         return $this->hasOne('App\Receipt');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
