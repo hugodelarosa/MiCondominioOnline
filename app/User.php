@@ -45,4 +45,9 @@ class User extends Model
     {
         return $this->hasMany('App\Announcement');
     }
+
+    public function resources()
+    {
+        return $this->hasMany('App\Resource');
+    }
 }

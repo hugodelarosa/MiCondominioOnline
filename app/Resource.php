@@ -10,4 +10,9 @@ class Resource extends Model
     {
         return $this->belongsTo('App\TypeOfResource');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

@@ -17,6 +17,8 @@ class CreateResourcesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('type_of_resource_id');
             $table->foreign('type_of_resource_id')->references('id')->on('type_of_resources');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('capacity');
             $table->float('fee');
         });
