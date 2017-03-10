@@ -11,7 +11,7 @@ class Membership extends Model
         return $this->hasOne('App\TypeOfMembership');
     }
 
-    public function user()
+    public function users()
     {
         return $this->hasMany('App\User');
     }

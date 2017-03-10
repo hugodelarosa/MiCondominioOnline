@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeOfState extends Model
+class TypeOfEstate extends Model
 {
-    public function estate()
+    public function estates()
     {
         return $this->hasMany('App\Estate');
     }
