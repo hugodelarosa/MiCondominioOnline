@@ -29,6 +29,6 @@ class CreateTypeOfEstatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_states');
+        Schema::dropIfExists('type_of_estates');
     }
 }

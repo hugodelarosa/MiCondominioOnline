@@ -29,6 +29,6 @@ class CreateTypeOfResourcesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_resource');
+        Schema::dropIfExists('type_of_resources');
     }
 }
