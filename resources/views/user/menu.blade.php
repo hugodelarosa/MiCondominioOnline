@@ -8,7 +8,7 @@
         <div class="panel-body">
             <ul class="list-group">
                 <li class="list-group-item"><a href="">Consultar usuarios</a></li>
-                <li class="list-group-item"><a href="">Registrar usuarios</a></li>
+                <li class="list-group-item"><a href="{{ view('user.create') }}">Registrar usuarios</a></li>
                 <li class="list-group-item"><a href="">Modificar usuarios</a></li>
                 <li class="list-group-item"><a href="">Eliminar usuarios</a></li>
             </ul>
