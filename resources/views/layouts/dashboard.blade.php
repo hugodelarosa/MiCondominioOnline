@@ -1,9 +1,5 @@
 <!-- Lateral menu of our dashboard -->
 
-@extends('layouts.app')
-
-@section('panel')
-
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -21,8 +17,6 @@
                 </div>
             </div>
         </div>
-        @yield('content')
+        @yield('dashboard')
     </div>
 </div>
-
-@endsection

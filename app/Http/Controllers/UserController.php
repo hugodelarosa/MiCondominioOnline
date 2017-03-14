@@ -14,7 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.menu');
+        // call User model
+        $data = User::all();
+        // send to view
+        return view('user.index', compact('data'));
     }
 
     /**
