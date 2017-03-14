@@ -38,7 +38,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required'
+        ]);
+
+        User::create($request->all());
+        return redirect()->route('user.index')
+                        ->with('success','Usuario creaado satisfactoriamente');
     }
 
     /**
