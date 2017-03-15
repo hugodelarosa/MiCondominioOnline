@@ -33,6 +33,7 @@
                             <td>{{ $row->phone }}</td>
                             <td>
                                 <a class="btn btn-info" href="{{ route('user.show', $row->id) }}">Info</a>
+                                <a class="btn btn-primary" href="{{ route('user.edit', $row->id) }}">Editar</a>
                             </td>
                         </tr>
                     </tbody>

@@ -71,7 +71,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $user = User::find($user);
+        return view('user.edit',compact('user'));
     }
 
     /**
@@ -83,7 +84,16 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'lastname' => 'required',
+            'email' => 'required',
+            'phone' => 'required'
+        ]);
+
+        User::find($user)->update($request->all());
+        return redirect()->route('user.index')
+                        ->with('success','Item updated successfully');
     }
 
     /**
