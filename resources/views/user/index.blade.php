@@ -31,7 +31,9 @@
                             <td>{{ $row->lastname }}</td>
                             <td>{{ $row->email }}</td>
                             <td>{{ $row->phone }}</td>
-                            <td></td>
+                            <td>
+                                <a class="btn btn-info" href="{{ route('user.show', $row->id) }}">Info</a>
+                            </td>
                         </tr>
                     </tbody>
                     @endforeach
