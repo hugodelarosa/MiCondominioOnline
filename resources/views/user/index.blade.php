@@ -34,6 +34,12 @@
                             <td>
                                 <a class="btn btn-info" href="{{ route('user.show', $row->id) }}">Info</a>
                                 <a class="btn btn-primary" href="{{ route('user.edit', $row->id) }}">Editar</a>
+                                <form method="POST" action="{{ route('user.destroy', $row->id) }}" style="display: inline;">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    {{ method_field('DELETE')}}
+                                    <button type="submit" class="btn btn-danger">Borrar</button>
+                                </form>
                             </td>
                         </tr>
                     </tbody>
