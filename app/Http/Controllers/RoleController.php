@@ -25,7 +25,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('role.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        Role::create($request->all());
+        return redirect()->route('role.index')
+                        ->with('success', 'Rol creado satisfactoriamente');
     }
 
     /**
