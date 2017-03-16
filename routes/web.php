@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-//Users CRUD menu
+//Menu routes
 Route::resource('user', 'UserController');
+Route::resource('role', 'RoleController');
+
