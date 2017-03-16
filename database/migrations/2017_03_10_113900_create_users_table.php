@@ -14,14 +14,14 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
-            $table->unsignedBigInteger('membership_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('membership_id')->nullable();
             $table->foreign('membership_id')
             ->references('id')
             ->on('memberships')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('role_id')->nullable();
             $table->foreign('role_id')
             ->references('id')
             ->on('roles')

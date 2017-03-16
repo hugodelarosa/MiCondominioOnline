@@ -14,7 +14,7 @@ class CreateAssetsTable extends Migration
     public function up()
     {
         Schema::create('assets', function (Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')

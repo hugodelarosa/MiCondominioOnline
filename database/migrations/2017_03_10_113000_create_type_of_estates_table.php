@@ -14,7 +14,7 @@ class CreateTypeOfEstatesTable extends Migration
     public function up()
     {
         Schema::create('type_of_estates', function(Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
+            $table->bigIncrements('id');
             $table->text('name');
             $table->text('description');
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateTypeOfEstatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_states');
+        Schema::dropIfExists('type_of_estates');
     }
 }

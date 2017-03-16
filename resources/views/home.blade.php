@@ -1,17 +1,23 @@
+<!-- Main dynamic content of the dashboard -->
+
+@extends('layouts.dashboard')
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
+@endsection
+
+@section('dashboard')
+<div class="col-md-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">Inicio</div>
+        <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, repellendus.</p>
         </div>
     </div>
 </div>
 @endsection
+
+
+
+

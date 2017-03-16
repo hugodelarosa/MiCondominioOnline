@@ -14,7 +14,7 @@ class CreateReceiptsTable extends Migration
     public function up()
     {
         Schema::create('receipts', function(Blueprint $table) {
-            $table->bigIncrements('id')->default(0);
+            $table->bigIncrements('id');
             $table->date('date');
             $table->text('name_of_img');
             $table->text('type_of_img');
