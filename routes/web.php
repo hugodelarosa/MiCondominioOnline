@@ -22,4 +22,5 @@ Route::get('/home', 'HomeController@index');
 //Menu routes
 Route::resource('user', 'UserController');
 Route::resource('role', 'RoleController');
+Route::resource('condo', 'CondoController');
 
