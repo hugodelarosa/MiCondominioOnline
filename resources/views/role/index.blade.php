@@ -29,9 +29,8 @@
                                 <a class="btn btn-info" href="{{ route('role.show', $row->id) }}">Info</a>
                                 <a class="btn btn-primary" href="{{ route('role.edit', $row->id) }}">Editar</a>
                                 <form method="POST" action="{{ route('role.destroy', $row->id) }}" style="display: inline;">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     {{ method_field('DELETE')}}
+                                    {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">Borrar</button>
                                 </form>
                             </td>
