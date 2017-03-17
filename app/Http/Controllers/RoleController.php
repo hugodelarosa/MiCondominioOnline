@@ -53,7 +53,8 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        $role = Role::find($role);
+        return view('role.show', compact('role'));
     }
 
     /**
@@ -64,7 +65,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        $role = Role::find($role);
+        return view('role.edit', compact('role'));
     }
 
     /**
@@ -76,7 +78,13 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        Role::find($role)->update($request->all());
+        return redirect()->route('role.index')
+                        ->with('success', 'Role updated successfully!');
     }
 
     /**
