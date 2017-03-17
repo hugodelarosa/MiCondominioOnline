@@ -10,7 +10,7 @@
                     <ul class="list-group">
                         <li class="list-group-item"><a href="{{ url('/user') }}">Usuarios</a></li>
                         <li class="list-group-item"><a href="{{ route('role.index') }}">Roles</a></li>
-                        <li class="list-group-item"><a href=""></a></li>
+                        <li class="list-group-item"><a href="{{ route('condo.index') }}">Condominios</a></li>
                         <li class="list-group-item"><a href=""></a></li>
                         <li class="list-group-item"><a href=""></a></li>
                     </ul>
