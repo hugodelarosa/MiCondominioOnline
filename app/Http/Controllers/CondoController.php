@@ -15,7 +15,7 @@ class CondoController extends Controller
     public function index()
     {
         $data = Condo::all();
-        return view('condo.index', compact('data'))
+        return view('condo.index', compact('data'));
     }
 
     /**
