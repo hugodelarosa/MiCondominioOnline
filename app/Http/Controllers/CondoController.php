@@ -25,7 +25,7 @@ class CondoController extends Controller
      */
     public function create()
     {
-        //
+        return view('condo.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class CondoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'direction' => 'required'
+        ]);
+
+        Condo::create($request->all());
+        return redirect()->route('condo.index')
+                        ->with('success', 'Item created successfully');
     }
 
     /**
