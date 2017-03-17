@@ -54,7 +54,8 @@ class CondoController extends Controller
      */
     public function show(Condo $condo)
     {
-        //
+        $condo = Condo::find($condo);
+        return view('condo.show', compact('condo'));
     }
 
     /**
@@ -65,7 +66,8 @@ class CondoController extends Controller
      */
     public function edit(Condo $condo)
     {
-        //
+        $condo = Condo::find($condo);
+        return view('condo.edit', compact('condo'));
     }
 
     /**
@@ -77,7 +79,14 @@ class CondoController extends Controller
      */
     public function update(Request $request, Condo $condo)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'direction' => 'required'
+        ]);
+
+        Condo::find($condo)->update($request->all());
+        return redirect()->route('condo.index')
+                        ->with('success', 'Item updated successfully');
     }
 
     /**
