@@ -97,6 +97,8 @@ class CondoController extends Controller
      */
     public function destroy(Condo $condo)
     {
-        //
+        Condo::find($condo)->delete();
+        return redirect()->route('condo.index')
+                        ->with('success', 'Item deleted successfully');
     }
 }
