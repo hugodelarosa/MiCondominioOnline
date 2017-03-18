@@ -9,8 +9,8 @@
 <div class="col-md-8">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            <h5 style="padding-top: 1.5px;" class="pull-left">Condominios</h5>
-            <a class="btn btn-default pull-right" href="{{ route('condo.create') }}">Añadir condominio</a>
+            <h5 style="padding-top: 1.5px;" class="pull-left">Condominos</h5>
+            <a class="btn btn-default pull-right" href="{{ route('condo.create') }}">Añadir condomino</a>
         </div>
         <div class="panel-body">
             @if($data)
