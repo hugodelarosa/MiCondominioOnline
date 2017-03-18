@@ -62,7 +62,7 @@
 
 
                 <div class="form-group{{ $errors->has('notes') ? ' has-error' : '' }}">
-                    <label for="notes" class="col-md-4 control-label">Teléfono</label>
+                    <label for="notes" class="col-md-4 control-label">Notas</label>
 
                     <div class="col-md-6">
                         <input id="notes" type="notes" class="form-control" name="notes" value="{{ old('notes') }}" required>
