@@ -11,7 +11,7 @@
 <div class="col-md-8">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            <h5 style="padding-top: 1.5px;" class="pull-left">Añadir usuario</h5>
+            <h5 style="padding-top: 1.5px;" class="pull-left">Añadir Condomino</h5>
             <a class="btn btn-default pull-right" href="{{ route('condo.index') }}">Atras</a>
         </div>
         <div class="panel-body">
@@ -19,7 +19,7 @@
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name" class="col-md-4 control-label">Condominio</label>
+                    <label for="name" class="col-md-4 control-label">Condomino</label>
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
                         <button type="submit" class="btn btn-primary">
-                            Añadir condominio
+                            Añadir condomino
                         </button>
                     </div>
                 </div>
