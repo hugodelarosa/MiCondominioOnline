@@ -23,4 +23,5 @@ Route::get('/home', 'HomeController@index');
 Route::resource('user', 'UserController');
 Route::resource('role', 'RoleController');
 Route::resource('condo', 'CondoController');
+Route::resource('estate', 'EstateController');
 
