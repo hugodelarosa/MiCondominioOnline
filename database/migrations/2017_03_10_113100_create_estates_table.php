@@ -15,7 +15,7 @@ class CreateEstatesTable extends Migration
     {
         Schema::create('estates', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_estate_id');
+            $table->unsignedBigInteger('type_of_estate_id')->nullable();
             $table->foreign('type_of_estate_id')
             ->references('id')
             ->on('type_of_estates')
