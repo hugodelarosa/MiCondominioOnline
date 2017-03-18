@@ -10,7 +10,7 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Condominios</h5>
-            <a class="btn btn-default pull-right" href="{{ route('user.create') }}">Añadir condominio</a>
+            <a class="btn btn-default pull-right" href="{{ route('estate.create') }}">Añadir condominio</a>
         </div>
         <div class="panel-body">
             @if($data)
