@@ -9,7 +9,7 @@
 <div class="col-md-8">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            <h5 style="padding-top: 1.5px;" class="pull-left">Editar condominio {{ $condo->name }}</h5>
+            <h5 style="padding-top: 1.5px;" class="pull-left">Editar condomino {{ $condo->name }}</h5>
             <a href="" class="btn btn-default pull-right" href="{{ route('condo.index') }}">Atras</a>
         </div>
         <div class="panel-body">
@@ -18,7 +18,7 @@
                 {{ csrf_field() }}
                 
                 <div class="form-group">
-                    <strong>Condominio:</strong>
+                    <strong>Condomino:</strong>
                     <input class="form-control" type="text" name="name">
                 </div>
                 <div class="form-group">

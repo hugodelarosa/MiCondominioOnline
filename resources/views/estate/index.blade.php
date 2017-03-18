@@ -9,28 +9,32 @@
 <div class="col-md-8">
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            <h5 style="padding-top: 1.5px;" class="pull-left">Condominos</h5>
-            <a class="btn btn-default pull-right" href="{{ route('condo.create') }}">Añadir condomino</a>
+            <h5 style="padding-top: 1.5px;" class="pull-left">Condominios</h5>
+            <a class="btn btn-default pull-right" href="{{ route('estate.create') }}">Añadir condominio</a>
         </div>
         <div class="panel-body">
             @if($data)
                 <table class="table">
                     <thead>
                         <tr>
-                            <td>Nombre</td>
-                            <td>Dirección</td>
+                            <td>Numero</td>
+                            <td>Rentado</td>
+                            <td>Lugares de Estacionamiento</td>
+                            <td>Notas</td>
                             <td>Opciones</td>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach($data as $row)   
                         <tr>
-                            <td>{{ $row->name }}</td>
-                            <td>{{ $row->direction }}</td>
+                            <td>{{ $row->number }}</td>
+                            <td>{{ $row->rented }}</td>
+                            <td>{{ $row->number_of_parking_lots }}</td>
+                            <td>{{ $row->notes }}</td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('condo.show', $row->id) }}">Info</a>
-                                <a class="btn btn-primary" href="{{ route('condo.edit', $row->id) }}">Editar</a>
-                                <form method="POST" action="{{ route('condo.destroy', $row->id) }}" style="display: inline;">
+                                <a class="btn btn-info" href="{{ route('estate.show', $row->id) }}">Info</a>
+                                <a class="btn btn-primary" href="{{ route('estate.edit', $row->id) }}">Editar</a>
+                                <form method="POST" action="{{ route('estate.destroy', $row->id) }}" style="display: inline;">
                                     {{ method_field('DELETE')}}
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">Borrar</button>
