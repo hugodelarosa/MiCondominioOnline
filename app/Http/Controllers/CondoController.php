@@ -15,7 +15,7 @@ class CondoController extends Controller
     public function index()
     {
         $data = Condo::all();
-        return view('condo.index', compact('data'));
+        return view('condos.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CondoController extends Controller
      */
     public function create()
     {
-        return view('condo.create');
+        return view('condos.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class CondoController extends Controller
         ]);
 
         Condo::create($request->all());
-        return redirect()->route('condo.index')
+        return redirect()->route('condos.index')
                         ->with('success', 'Item created successfully');
     }
 
@@ -55,7 +55,7 @@ class CondoController extends Controller
     public function show(Condo $condo)
     {
         $condo = Condo::find($condo);
-        return view('condo.show', compact('condo'));
+        return view('condos.show', compact('condo'));
     }
 
     /**
@@ -67,7 +67,7 @@ class CondoController extends Controller
     public function edit(Condo $condo)
     {
         $condo = Condo::find($condo);
-        return view('condo.edit', compact('condo'));
+        return view('condos.edit', compact('condo'));
     }
 
     /**
@@ -85,7 +85,7 @@ class CondoController extends Controller
         ]);
 
         Condo::find($condo)->update($request->all());
-        return redirect()->route('condo.index')
+        return redirect()->route('condos.index')
                         ->with('success', 'Item updated successfully');
     }
 
@@ -98,7 +98,7 @@ class CondoController extends Controller
     public function destroy(Condo $condo)
     {
         Condo::find($condo)->delete();
-        return redirect()->route('condo.index')
+        return redirect()->route('condos.index')
                         ->with('success', 'Item deleted successfully');
     }
 }

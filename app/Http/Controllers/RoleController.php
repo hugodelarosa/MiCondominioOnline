@@ -15,7 +15,7 @@ class RoleController extends Controller
     public function index()
     {
         $data = Role::all();
-        return view('role.index', compact('data'));
+        return view('roles.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('role.create');
+        return view('roles.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class RoleController extends Controller
         ]);
 
         Role::create($request->all());
-        return redirect()->route('role.index')
+        return redirect()->route('roles.index')
                         ->with('success', 'Rol creado satisfactoriamente');
     }
 
@@ -54,7 +54,7 @@ class RoleController extends Controller
     public function show(Role $role)
     {
         $role = Role::find($role);
-        return view('role.show', compact('role'));
+        return view('roles.show', compact('role'));
     }
 
     /**
@@ -66,7 +66,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $role = Role::find($role);
-        return view('role.edit', compact('role'));
+        return view('roles.edit', compact('role'));
     }
 
     /**
@@ -83,7 +83,7 @@ class RoleController extends Controller
         ]);
 
         Role::find($role)->update($request->all());
-        return redirect()->route('role.index')
+        return redirect()->route('roles.index')
                         ->with('success', 'Role updated successfully!');
     }
 
@@ -96,7 +96,7 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         Role::find($role)->delete();
-        return redirect()->route('role.index')
+        return redirect()->route('roles.index')
                         ->with('success', 'Item deleted successfully');
     }
 }
