@@ -12,10 +12,10 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Añadir rol</h5>
-            <a class="btn btn-default pull-right" href="{{ route('role.index') }}">Atras</a>
+            <a class="btn btn-default pull-right" href="{{ route('roles.index') }}">Atras</a>
         </div>
         <div class="panel-body">
-           <form class="form-horizontal" role="form" method="POST" action="{{ route('role.store') }}">
+           <form class="form-horizontal" role="form" method="POST" action="{{ route('roles.store') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

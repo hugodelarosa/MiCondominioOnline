@@ -10,7 +10,7 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Usuarios</h5>
-            <a class="btn btn-default pull-right" href="{{ route('user.create') }}">Añadir usuario</a>
+            <a class="btn btn-default pull-right" href="{{ route('users.create') }}">Añadir usuario</a>
         </div>
         <div class="panel-body">
             @if($data)
@@ -32,12 +32,11 @@
                             <td>{{ $row->email }}</td>
                             <td>{{ $row->phone }}</td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('user.show', $row->id) }}">Info</a>
-                                <a class="btn btn-primary" href="{{ route('user.edit', $row->id) }}">Editar</a>
-                                <form method="POST" action="{{ route('user.destroy', $row->id) }}" style="display: inline;">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    {{ method_field('DELETE')}}
+                                <a class="btn btn-info" href="{{ route('users.show', $row->id) }}">Info</a>
+                                <a class="btn btn-primary" href="{{ route('users.edit', $row->id) }}">Editar</a>
+                                <form method="POST" action="{{ route('users.destroy', $row->id) }}" style="display: inline;">
+                                    {{ method_field('DELETE') }}
+                                    {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">Borrar</button>
                                 </form>
                             </td>

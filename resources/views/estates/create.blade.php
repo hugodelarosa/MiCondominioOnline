@@ -12,10 +12,10 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Añadir condominio</h5>
-            <a class="btn btn-default pull-right" href="{{ route('estate.index') }}">Atras</a>
+            <a class="btn btn-default pull-right" href="{{ route('estates.index') }}">Atras</a>
         </div>
         <div class="panel-body">
-           <form class="form-horizontal" role="form" method="POST" action="{{ route('estate.store') }}">
+           <form class="form-horizontal" role="form" method="POST" action="{{ route('estates.store') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">

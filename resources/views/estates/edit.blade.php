@@ -10,10 +10,10 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Editar condominio {{ $estate->name }}</h5>
-            <a href="" class="btn btn-default pull-right" href="{{ route('estate.index') }}">Atras</a>
+            <a href="" class="btn btn-default pull-right" href="{{ route('estates.index') }}">Atras</a>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('estate.update', $estate->id) }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('estates.update', $estate->id) }}">
                 {{ method_field('PUT') }}
                 {{ csrf_field() }}
                 

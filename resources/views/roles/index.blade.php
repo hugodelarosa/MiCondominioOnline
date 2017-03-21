@@ -10,7 +10,7 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Roles</h5>
-            <a class="btn btn-default pull-right" href="{{ route('role.create') }}">Añadir rol</a>
+            <a class="btn btn-default pull-right" href="{{ route('roles.create') }}">Añadir rol</a>
         </div>
         <div class="panel-body">
             @if($data)
@@ -26,9 +26,9 @@
                         <tr>
                             <td>{{ $row->name }}</td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('role.show', $row->id) }}">Info</a>
-                                <a class="btn btn-primary" href="{{ route('role.edit', $row->id) }}">Editar</a>
-                                <form method="POST" action="{{ route('role.destroy', $row->id) }}" style="display: inline;">
+                                <a class="btn btn-info" href="{{ route('roles.show', $row->id) }}">Info</a>
+                                <a class="btn btn-primary" href="{{ route('roles.edit', $row->id) }}">Editar</a>
+                                <form method="POST" action="{{ route('roles.destroy', $row->id) }}" style="display: inline;">
                                     {{ method_field('DELETE')}}
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">Borrar</button>

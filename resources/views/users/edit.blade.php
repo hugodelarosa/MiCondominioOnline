@@ -10,10 +10,10 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Editar usuario {{ $user->name }}</h5>
-            <a href="" class="btn btn-default pull-right" href="{{ route('user.index') }}">Atras</a>
+            <a href="" class="btn btn-default pull-right" href="{{ route('users.index') }}">Atras</a>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('user.update', $user->id) }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('users.update', $user->id) }}">
                 {{ method_field('PUT') }}
                 {{ csrf_field() }}
                 

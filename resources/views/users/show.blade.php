@@ -10,7 +10,7 @@
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
             <h5 style="padding-top: 1.5px;" class="pull-left">Usuario {{ $user->name }}</h5>
-            <a class="btn btn-default pull-right" href="{{ route('user.index') }}">Atras</a>
+            <a class="btn btn-default pull-right" href="{{ route('users.index') }}">Atras</a>
         </div>
         <div class="panel-body">
             <div class="list-group">
