@@ -8,10 +8,10 @@
                 <div class="panel-body">
                     <div class="panel-title">Bienvenido!</div>
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="{{ url('/user') }}">Usuarios</a></li>
-                        <li class="list-group-item"><a href="{{ route('role.index') }}">Roles</a></li>
-                        <li class="list-group-item"><a href="{{ route('condo.index') }}">Condominos</a></li>
-                        <li class="list-group-item"><a href="{{ route('estate.index') }}">Condominios</a></li>
+                        <li class="list-group-item"><a href="{{ route('users.index') }}">Usuarios</a></li>
+                        <li class="list-group-item"><a href="{{ route('roles.index') }}">Roles</a></li>
+                        <li class="list-group-item"><a href="{{ route('condos.index') }}">Condominos</a></li>
+                        <li class="list-group-item"><a href="{{ route('estates.index') }}">Condominios</a></li>
                         <li class="list-group-item"><a href=""></a></li>
                     </ul>
                 </div>
