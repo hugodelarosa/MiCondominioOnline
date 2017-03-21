@@ -1,8 +1,8 @@
 <!-- Lateral menu of our dashboard -->
 
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="panel panel-default">
-        <div class="panel-heading"><a href="{{ url('/') }}">Panel De Control</a></div>
+        <div class="panel-heading"><a href="{{ url('/home') }}">Panel De Control</a></div>
         <div class="panel-body">
             <div class="panel-title">Bienvenido!</div>
             <ul class="list-group">
