@@ -15,7 +15,7 @@ class EstateController extends Controller
     public function index()
     {
         $data = Estate::all();
-        return view('estate.index', compact('data'));
+        return view('estates.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class EstateController extends Controller
      */
     public function create()
     {
-        return view('estate.create');
+        return view('estates.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class EstateController extends Controller
         ]);
 
         Estate::create($request->all());
-        return redirect()->route('estate.index')
+        return redirect()->route('estates.index')
                         ->with('success', 'Item created successfully');
     }
 
@@ -57,7 +57,7 @@ class EstateController extends Controller
     public function show(Estate $estate)
     {
         $estate = Estate::find($estate);
-        return view('estate.show', compact('estate'));
+        return view('estates.show', compact('estate'));
     }
 
     /**
@@ -69,7 +69,7 @@ class EstateController extends Controller
     public function edit(Estate $estate)
     {
         $estate = Estate::find($estate);
-        return view('estate.edit', compact('estate'));
+        return view('estates.edit', compact('estate'));
     }
 
     /**
@@ -89,7 +89,7 @@ class EstateController extends Controller
         ]);
 
         Estate::update($request->all());
-        return redirect()->route('estate.index')
+        return redirect()->route('estates.index')
                         ->with('success', 'Item updated successfully');
     }
 
@@ -102,7 +102,7 @@ class EstateController extends Controller
     public function destroy(Estate $estate)
     {
         Estate::find($estate)->delete();
-        return redirect()->route('estate.index')
+        return redirect()->route('estates.index')
                         ->with('success', 'Item deleted successfully');
     }
 }

@@ -81,8 +81,14 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                @include('layouts._sidenav')
+                <div class="col-md-9">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

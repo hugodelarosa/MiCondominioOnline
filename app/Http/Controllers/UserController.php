@@ -17,7 +17,7 @@ class UserController extends Controller
         // call User model
         $data = User::all();
         // send to view
-        return view('user.index', compact('data'));
+        return view('users.index', compact('data'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        return view('users.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class UserController extends Controller
         ]);
 
         User::create($request->all());
-        return redirect()->route('user.index')
+        return redirect()->route('users.index')
                         ->with('success','Usuario creaado satisfactoriamente');
     }
 
@@ -60,7 +60,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         $user = User::find($user);
-        return view('user.show',compact('user'));
+        return view('users.show',compact('user'));
     }
 
     /**
@@ -72,7 +72,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $user = User::find($user);
-        return view('user.edit',compact('user'));
+        return view('users.edit',compact('user'));
     }
 
     /**
@@ -92,7 +92,7 @@ class UserController extends Controller
         ]);
 
         User::find($user)->update($request->all());
-        return redirect()->route('user.index')
+        return redirect()->route('users.index')
                         ->with('success','Item updated successfully');
     }
 
@@ -105,7 +105,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         User::find($user)->delete();
-        return redirect()->route('user.index')
+        return redirect()->route('users.index')
                         ->with('success','Item deleted successfully');
     }
 }

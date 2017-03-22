@@ -20,8 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 //Menu routes
-Route::resource('user', 'UserController');
-Route::resource('role', 'RoleController');
-Route::resource('condo', 'CondoController');
-Route::resource('estate', 'EstateController');
+Route::resource('users', 'UserController');
+Route::resource('roles', 'RoleController');
+Route::resource('condos', 'CondoController');
+Route::resource('estates', 'EstateController');
 
