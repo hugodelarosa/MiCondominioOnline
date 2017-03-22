@@ -81,14 +81,20 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="row">
-                @include('layouts._sidenav')
-                <div class="col-md-9">
-                    @yield('content')
+        @if (Auth::guest())
+            @yield('content')
+        @else
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        @include('layouts._sidenav')
+                    </div>
+                    <div class="col-md-9">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 
     <!-- Scripts -->
