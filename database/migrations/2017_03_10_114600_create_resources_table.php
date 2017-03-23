@@ -15,13 +15,13 @@ class CreateResourcesTable extends Migration
     {
         Schema::create('resources', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_resource_id');
+            $table->unsignedBigInteger('type_of_resource_id')->nullable();
             $table->foreign('type_of_resource_id')
             ->references('id')
             ->on('type_of_resources')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')
             ->references('id')
             ->on('users')

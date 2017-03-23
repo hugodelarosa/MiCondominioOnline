@@ -15,13 +15,13 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('type_of_visitor_id');
+            $table->unsignedBigInteger('type_of_visitor_id')->nullable();
             $table->foreign('type_of_visitor_id')
             ->references('id')
             ->on('type_of_visitors')
             ->onUpdate('cascade')
             ->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')
             ->references('id')
             ->on('users')

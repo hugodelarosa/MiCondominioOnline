@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             ->onDelete('cascade');
             $table->text('name');
             $table->text('lastname');
-            $table->text('email')->unique();
+            $table->string('email')->unique();
             $table->string('phone');
             $table->text('password');
             $table->rememberToken();
