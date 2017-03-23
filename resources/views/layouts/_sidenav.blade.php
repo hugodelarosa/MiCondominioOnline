@@ -9,7 +9,7 @@
             <li class="list-group-item"><a href="{{ route('roles.index') }}">Roles</a></li>
             <li class="list-group-item"><a href="{{ route('condos.index') }}">Condominos</a></li>
             <li class="list-group-item"><a href="{{ route('estates.index') }}">Condominios</a></li>
-            <li class="list-group-item"><a href=""></a></li>
+            <li class="list-group-item"><a href="{{ route('typeoftransactions.index') }}">Tipo de transacción</a></li>
         </ul>
     </div>
 </div>
