@@ -16,7 +16,7 @@ class CreateTypeOfTransactionsTable extends Migration
         Schema::create('type_of_transactions', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->boolean('income/outcome');
+            $table->boolean('income_outcome')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
