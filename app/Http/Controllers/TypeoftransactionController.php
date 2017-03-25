@@ -37,8 +37,7 @@ class TypeOfTransactionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'income/outcome' => 'required'
+            'name' => 'required'
         ]);
 
         TypeOfTransaction::create($request->all());
@@ -80,8 +79,7 @@ class TypeOfTransactionController extends Controller
     public function update(Request $request, TypeOfTransaction $typeOfTransaction)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'income/outcome' => 'required'
+            'name' => 'required'
         ]);
 
         TypeOfTransaction::find($typeOfTransaction)->update($request->all());
