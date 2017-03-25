@@ -4,7 +4,7 @@
 <div class="panel panel-default">
     <div class="panel-heading clearfix">
         <h5 style="padding-top: 1.5px;" class="pull-left">Editar condomino {{ $condo->name }}</h5>
-        <a href="" class="btn btn-default pull-right" href="{{ route('condos.index') }}">Atras</a>
+        <a class="btn btn-default pull-right" href="{{ route('condos.index') }}">Atras</a>
     </div>
     <div class="panel-body">
         <form class="form-horizontal" role="form" method="POST" action="{{ route('condos.update', $condo->id) }}">
