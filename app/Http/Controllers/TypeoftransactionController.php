@@ -51,10 +51,10 @@ class TypeOfTransactionController extends Controller
      * @param  \App\TypeOfTransaction  $typeOfTransaction
      * @return \Illuminate\Http\Response
      */
-    public function show(TypeOfTransaction $typeOfTransaction)
+    public function show(TypeOfTransaction $typeoftransaction)
     {
-        $typeOfTransaction = TypeOfTransaction::find($typeOfTransaction);
-        return view('typeoftransaction.show', compact('user'));
+        $typeoftransaction = TypeOfTransaction::find($typeoftransaction);
+        return view('typeoftransactions.show', compact('typeoftransaction'));
     }
 
     /**
@@ -63,10 +63,10 @@ class TypeOfTransactionController extends Controller
      * @param  \App\TypeOfTransaction  $typeOfTransaction
      * @return \Illuminate\Http\Response
      */
-    public function edit(TypeOfTransaction $typeOfTransaction)
+    public function edit(TypeOfTransaction $typeoftransaction)
     {
-        $typeOfTransaction = TypeOfTransaction::find($typeOfTransaction);
-        return view('typeoftransaction.edit', compact('typeoftransaction'));
+        $typeoftransaction = TypeOfTransaction::find($typeoftransaction);
+        return view('typeoftransactions.edit', compact('typeoftransaction'));
     }
 
     /**
@@ -76,13 +76,13 @@ class TypeOfTransactionController extends Controller
      * @param  \App\TypeOfTransaction  $typeOfTransaction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TypeOfTransaction $typeOfTransaction)
+    public function update(Request $request, TypeOfTransaction $typeoftransaction)
     {
         $this->validate($request, [
             'name' => 'required'
         ]);
 
-        TypeOfTransaction::find($typeOfTransaction)->update($request->all());
+        TypeOfTransaction::find($typeoftransaction)->update($request->all());
         return redirect()->route('typeoftransactions.index')
                             ->with('success', 'Item created successfully');
     }
@@ -93,9 +93,9 @@ class TypeOfTransactionController extends Controller
      * @param  \App\TypeOfTransaction  $typeOfTransaction
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TypeOfTransaction $typeOfTransaction)
+    public function destroy(TypeOfTransaction $typeoftransaction)
     {
-        TypeOfTransaction::find($typeOfTransaction)->delete();
+        TypeOfTransaction::find($typeoftransaction)->delete();
         return redirect()->route('typeoftransactions.index')
                         ->with('success', 'Item deleted successfully');
     }
