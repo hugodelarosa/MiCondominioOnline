@@ -14,8 +14,9 @@ Due to a research done by the company about the different administration service
 
 ## Instalation
 ### Pre-requirements
-> Download and install composer. [COMPOSER](https://getcomposer.org/).
-> Download and install XAMPPP. [XAMPP](https://www.apachefriends.org/es/index.html).
+> Download and install  [COMPOSER](https://getcomposer.org/).
+
+> Download and install  [XAMPP](https://www.apachefriends.org/es/index.html).
 
 
 
