@@ -55,11 +55,36 @@ php composer update
 
 When download is finished, go to the root (app) directory and open the .env file. Once in there you will need to add the information for your local instance of DB.
 
-```php
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=micondo
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE= **your_db**
+DB_USERNAME= **your_username**
+DB_PASSWORD= **your_usernema_password**
+
 ```
+
+## Step 4 - Creating the database
+
+Navigate with the CMD or bash to the instalation root.
+
+```cmd
+cd /.../.../.../MiCondominioOnline/
+```
+
+Run the following command to run the migrations scripts for generating database.
+
+```cmd
+php artisan migrate
+```
+
+## Step 5.A - Running the aplication (php artisan serve)
+If you want to use artisan default settings for running the application, go ahead and navigate with the CMD or bash to the instalation root, and type the following command.
+
+```cmd
+php artisan serve
+```
+
+Remember that the aplication will run in the equivalent to *http://localhost:8000*
+
