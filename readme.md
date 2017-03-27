@@ -88,3 +88,12 @@ php artisan serve
 
 Remember that the aplication will run in the equivalent to *http://localhost:8000*
 
+## Step 5.B - Running the aplication (XAMPP apache instance)
+
+If you want to use the XAMPP control panel for running the aplication.
+1. Open the XAMPP control panel and click on the **APACHE** config option.
+2. Select the *httpd.conf* file to edit it. (It will be opened in the default editor)
+3. Look for the *DocumentRoot* Tag, that woul look like:
+```
+DocumentRoot "C:/xampp/htdocs"
+```
