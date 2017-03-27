@@ -92,8 +92,29 @@ Remember that the aplication will run in the equivalent to *http://localhost:800
 
 If you want to use the XAMPP control panel for running the aplication.
 1. Open the XAMPP control panel and click on the **APACHE** config option.
-2. Select the *httpd.conf* file to edit it. (It will be opened in the default editor)
-3. Look for the *DocumentRoot* Tag, that woul look like:
+
+2. Select the **_httpd.conf_** file to edit it. (It will be opened in the default editor)
+
+3. Look for the **_DocumentRoot_** Tag, that would look like:
 ```
 DocumentRoot "C:/xampp/htdocs"
 ```
+
+4. Replace the default route with the one where you downloaded the project. **IMPORTANT :** make it all the way to public folder.
+
+```
+DocumentRoot "C:/route/to/project/MiCondominioOnline/public/"
+```
+
+5. Look for the **_<Directory>_** tag, that would look like (notice the route is the same from the tag before) :
+
+```
+<Directory "C:/xampp/htdocs">
+
+```
+
+6. Replace the default route with the one where you downloaded the project. **IMPORTANT :** make it all the way to public folder.
+
+<Directory "C:/route/to/project/MiCondominioOnline/public/">
+
+**REMEMBER** the application would be running in something like *http://localhost* if the por config, and listen config have not been changed.
