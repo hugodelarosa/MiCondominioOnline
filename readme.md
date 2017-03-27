@@ -2,7 +2,7 @@
 
 
 
-## About Mi Condominio Online
+#About Mi Condominio Online
 
 Condominio.Plus it’s a Mexican company that will be conformed as a subsidiary of Soluciones Gubernamentales y Corporativas (SGC), company that was stablished in 2008; it started operations in Queretaro and now, it’s looking forward to expand the business operations to the rest of the country. 
 Using the “JUST & SIGN” trademark nowadays the company its involved in projects that embrace both legal and technologic aspects. 
@@ -15,8 +15,9 @@ Due to a research done by the company about the different administration service
 - [More about SGC](https://justsign.mx).
 
 
-## Instalation
-### Pre-requirements
+# Instalation
+## Pre-requirements
+
 For running he application, please notice to comply all the pre-requisits.
 > Download and install  [COMPOSER](https://getcomposer.org/).
 
