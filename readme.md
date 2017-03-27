@@ -25,22 +25,41 @@ For running he application, please notice to comply all the pre-requisits.
 > Download and install  [XAMPP](https://www.apachefriends.org/es/index.html).
 
 **IMPORTANT NOTES:** 
-- Make sure that you install also the MySQL package when installing XAMPP.
+- Make sure that you install also the **MySQL** package when installing **XAMPP**.
 - Please use the code that is published in the master branch
 - Keep the whole route for the folder, so you will need it for further usage in the PHP setup.
+- Follow the whole installation guide, **do not** miss **any** step.
 
 
-## Step 1
+## Step 1 - Downloading repo
 Download the latest version of the project from the github repository, this is important to be downloaded in the final destination where the app will be executing.
 
-```git
+```bash
 git clone https://github.com/hugodelarosa/MiCondominioOnline.git
 ```
 
-## Step 2
+## Step 2 - Installing Dependencies
 
 Navigate with the CMD or bash to the instalation root.
 
 ```cmd
 cd /.../.../.../MiCondominioOnline/
+```
+Run the following command to download all the dependencies and needed libraries
+
+```cmd
+php composer update
+```
+
+## Step 3 - Modifing the .env file
+
+When download is finished, go to the root (app) directory and open the .env file. Once in there you will need to add the information for your local instance of DB.
+
+```php
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=micondo
+DB_USERNAME=root
+DB_PASSWORD=
 ```
