@@ -33,6 +33,14 @@ For running he application, please notice to comply all the pre-requisits.
 ## Step 1
 Download the latest version of the project from the github repository, this is important to be downloaded in the final destination where the app will be executing.
 
----
-git clone https://github.com/hugodelarosa/MiCondominioOnline
----
+```git
+git clone https://github.com/hugodelarosa/MiCondominioOnline.git
+```
+
+## Step 2
+
+Navigate with the CMD or bash to the instalation root.
+
+```cmd
+cd /.../.../.../MiCondominioOnline/
+```
