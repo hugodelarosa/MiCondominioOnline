@@ -25,10 +25,14 @@ For running he application, please notice to comply all the pre-requisits.
 > Download and install  [XAMPP](https://www.apachefriends.org/es/index.html).
 
 **IMPORTANT NOTES:** 
-- Make sure that you install also the MySQL package when installing the package.
+- Make sure that you install also the MySQL package when installing XAMPP.
 - Please use the code that is published in the master branch
 - Keep the whole route for the folder, so you will need it for further usage in the PHP setup.
 
 
 ## Step 1
+Download the latest version of the project from the github repository, this is important to be downloaded in the final destination where the app will be executing.
 
+---
+git clone https://github.com/hugodelarosa/MiCondominioOnline
+---
