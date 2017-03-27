@@ -1,4 +1,4 @@
-<p align="center"><img src="https://capacitacion.center/applogo.png"></p>
+<p align="center"><img src="http://capacitacion.center/applogo.png"></p>
 
 
 
@@ -11,6 +11,13 @@ In the same approach, now the company is building a new solution for offering co
 Through the time SGC has acquired experience about the problems that a condominium administration faces during the daily operation, contributing with decisions and statements that have been valued positively.
 
 Due to a research done by the company about the different administration services, alongside with the investigation, testing and evaluation of web platforms in the market, SGC has determined to launch Condominio.Plus trademark together with the development of a system that help the operations.
+
+## Instalation
+### Pre-requirements
+> Download and install composer. [COMPOSER](https://getcomposer.org/).
+> Download and install XAMPPP. [XAMPP](https://www.apachefriends.org/es/index.html).
+
+
 
 
 - [More about SGC](https://justsign.mx).
