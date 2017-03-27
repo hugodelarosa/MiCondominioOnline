@@ -12,13 +12,19 @@ Through the time SGC has acquired experience about the problems that a condomini
 
 Due to a research done by the company about the different administration services, alongside with the investigation, testing and evaluation of web platforms in the market, SGC has determined to launch Condominio.Plus trademark together with the development of a system that help the operations.
 
+- [More about SGC](https://justsign.mx).
+
+
 ## Instalation
 ### Pre-requirements
+For running he application, please notice to comply all the pre-requisits.
 > Download and install  [COMPOSER](https://getcomposer.org/).
 
 > Download and install  [XAMPP](https://www.apachefriends.org/es/index.html).
 
+**IMPORTANT NOTES:** 
+- Make sure that you install also the MySQL package when installing the package.
+- Please use the code that is published in the master branch
+- Keep the whole route for the folder, so you will need it for further usage in the PHP setup.
 
 
-
-- [More about SGC](https://justsign.mx).
