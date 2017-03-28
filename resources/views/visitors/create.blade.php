@@ -8,7 +8,7 @@
         <a class="btn btn-default pull-right" href="{{ route('visitors.index') }}">Atras</a>
     </div>
     <div class="panel-body">
-        <form class="form-horizontal" role="form" method="POST" action="{{ route('users.store') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ route('visitors.store') }}">
             {{ csrf_field() }}
 
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -43,11 +43,29 @@
                 <label for="vehicle" class="col-md-4 control-label">Vehiculo ?</label>
 
                 <div class="col-md-6">
-                    <input id="vehicle" type="checkbox" class="form-control" name="vehicle" value="{{ old('vehicle') }}" required>
+                    <input id="vehicle" type="checkbox" class="form-control" name="vehicle">
 
                     @if ($errors->has('vehicle'))
                         <span class="help-block">
                             <strong>{{ $errors->first('vehicle') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('type_of_visitor') ? ' has-error' : '' }}">
+                <label for="type_of_visitor" class="col-md-4 control-label">Tipo de Visitante</label>
+
+                <div class="col-md-6">
+                    <select name="type_of_visitor">
+                        @foreach($tov as $t)
+                            <option value="{{$t->id}}"> {{$t->name}} </option>
+                        @endforeach
+                    </select>
+
+                    @if ($errors->has('estate'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('type_of_visitor') }}</strong>
                         </span>
                     @endif
                 </div>
