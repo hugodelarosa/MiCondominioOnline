@@ -25,3 +25,4 @@ Route::resource('roles', 'RoleController');
 Route::resource('condos', 'CondoController');
 Route::resource('estates', 'EstateController');
 
+Route::resource('visitors', 'VisitorController');

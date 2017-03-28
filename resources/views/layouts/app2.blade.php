@@ -23,7 +23,6 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-  @yield('scripts')
 </head>
 <body>
     <div id="app">
@@ -84,7 +83,6 @@
         </nav>
         <div class="container">
             <div class="row">
-                @include('layouts._sidenav')
                 <div class="col-md-9">
                     @yield('content')
                 </div>
@@ -92,6 +90,7 @@
         </div>
     </div>
 
-
+    <!-- Scripts -->
+    <script src="/js/app.js"></script>
 </body>
 </html>

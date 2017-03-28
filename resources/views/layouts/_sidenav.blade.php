@@ -10,6 +10,7 @@
                 <li class="list-group-item"><a href="{{ route('roles.index') }}">Roles</a></li>
                 <li class="list-group-item"><a href="{{ route('condos.index') }}">Condominios</a></li>
                 <li class="list-group-item"><a href="{{ route('estates.index') }}">Condominos</a></li>
+                <li class="list-group-item"><a href="{{ route('visitors.create') }}">Visitantes</a></li>
                 <li class="list-group-item"><a href=""></a></li>
             </ul>
         </div>
