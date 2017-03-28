@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/income', 'HomeController@expenses');
 //Menu routes
 Route::resource('users', 'UserController');
 Route::resource('roles', 'RoleController');
